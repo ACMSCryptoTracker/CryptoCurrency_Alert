@@ -1,0 +1,37 @@
+import coinmarketcap
+import json
+import pandas as pd
+import time
+
+market=coinmarketcap.Market()
+#coin=market.ticker("ethereum")
+
+# print(coin)
+
+#parsedCoin=json.dumps(coin)
+
+#print(parsedCoin)
+
+#bitcoin=pd.Series(market.ticker('bitcoin'))[0]
+#ether=pd.Series(market.ticker('ethereum'))[0]
+#df=pd.DataFrame([bitcoin,ether])
+#indexing=df.set_index("id")
+
+#print(indexing)
+
+#this grabs all of the coin data available
+coins = (market.ticker())
+for i in range(96):
+    #this creates a dataframe with the top 10 coins
+    #timestamps and stores the csv file
+    #waits 5 minutes  until collecting data again
+    count=1;
+    for j in range(10):
+        coinArray=pd.DataFrame([pd.Series(coins[j])]).set_index("id")
+       # print(coinArray)
+        location="./"+str(count)+'.csv'
+        coinArray.to_csv(location,mode='a',header=True)
+        count=count+1
+        print(count)
+        time.sleep(5)
+
