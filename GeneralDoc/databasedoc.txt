@@ -1,0 +1,7 @@
+Database Connection
+psql postgres://dbuzkqmi:vi24qSFc5TG77k5GPa4aQr3XlnLOBIRf@baasu.db.elephantsql.com:5432/dbuzkqmi
+
+Insert Query
+"INSERT INTO public.currency(name,symbol,rank,price_usd,price_btc,c_24h_volume_usd,market_cap_usd,available_supply,total_supply,max_supply,percentage_change_1h,percentage_change_24h,percentage_change_7d,last_updated) values('{}','{}',{},{},{},{},{},{},{},{},{},{},{},{})".format(values['name'][i],values['symbol'][i],values['rank'][i],values['price_usd'][i],values['price_btc'][i],values['24h_volume_usd'][i],values['market_cap_usd'][i],values['available_supply'][i],values['total_supply'][i],values['max_supply'][i],values['percent_change_1h'][i],values['percent_change_24h'][i],values['percent_change_7d'][i],values['last_updated'][i])
+
+
