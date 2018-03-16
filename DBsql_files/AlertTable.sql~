@@ -1,0 +1,20 @@
+CREATE TABLE public.alert
+(
+	alert_id bigserial primary key,
+	user_id  integer references user(user_id),
+	alert_type text,
+	coin_symbol text,
+	conversion_symbol text,
+	price double precision,
+	price_inc_by double precision,
+	price_dec_by double precision,
+	threshold_min double precision,
+	threshold_max double precision,
+	volume double precision,
+	volume_inc_by double precision,
+	volume_dec_by double precision,
+	marketcap double precision,
+	marketcap_inc_by double precision,
+	marketcap_dec_by double precision
+)
+ 

@@ -40,8 +40,8 @@ def insertIntoDatabase():
 		curr.execute(insertquery)
 	myConnection.commit()
 	myConnection.close()
-	s.enter(20, 1, insertIntoDatabase, ())
+	s.enter(1800, 1, insertIntoDatabase, ())
 
-s.enter(20, 1, insertIntoDatabase, ())
+s.enter(1800, 1, insertIntoDatabase, ())
 s.run()
 
