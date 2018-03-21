@@ -16,7 +16,7 @@ curr.execute("LISTEN events;")
 collection=[]
 print "Waiting for notifications on channel 'myEvent'"
 def sendEmail(price,emails):
-	from_addr = 'akshita311goyal@gmail.com'
+	from_addr = 'urja4bluestar@gmail.com'
 	subject='Alert'
 	body_text='Price Change'
 	bodytext = string.join(("From: %s" % from_addr,"To: %s" % ', '.join(emails),"Subject: %s" % subject ,"",body_text), "\r\n")

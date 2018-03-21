@@ -16,21 +16,21 @@ curr.execute("LISTEN events;")
 collection=[]
 print "Waiting for notifications on channel 'myEvent'"
 def sendEmail(price,emails):
-	from_addr = 'akshita311goyal@gmail.com'
+	from_addr = 'urja4bluestar@gmail.com'
 	subject='Alert'
 	body_text='Price Change'
 	bodytext = string.join(("From: %s" % from_addr,"To: %s" % ', '.join(emails),"Subject: %s" % subject ,"",body_text), "\r\n")
 
 	# Credentials (if needed)
-	username = 'akshita311goyal@gmail.com'
-	password = '7042031822' 
+	username = 'urja4bluestar@gmail.com'
+	password = 'powers123' 
   
 	# The actual mail sent
 	server = smtplib.SMTP('smtp.gmail.com:587')
 	server.ehlo()
 	server.starttls()
 	server.login(username,password)
-	server.sendmail(fromaddr, toaddrs, bodytext)
+	server.sendmail(from_addr,emails, bodytext)
 	server.quit()
 	print("Mail Sent")
 		
