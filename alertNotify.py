@@ -54,12 +54,13 @@ def checkThresholdAlert(threshold_min,threshold_max,price,userid):
 			for r in result:
 				emails.append(r[0])		
 			sendEmail(price,emails)
+
 def checkPriceAlert(price,priceInc,priceDec,c_price,userid):
 	alert=False
 	emails=[]
 	if(c_price < price):
 		percentage=(price-c_price)/price*100
-		if(percentage <= priceDec):
+		if(percentage >= priceDec):
 			alert=True
 	else:
 		percentage=(c_price-price)/price*100
@@ -82,7 +83,7 @@ def checkVolumeAlert(volume,volInc,volDec,c_volume,userid):
 			alert=True
 	else:
 		precentage=(volume-c_volume)/volume*100
-		if(percentage <= volDec):
+		if(percentage >= volDec):
 			alert=True		
 	if(alert == True):
 		selectQuery="select email from public.user where user_id={}".format(userid)
@@ -92,6 +93,7 @@ def checkVolumeAlert(volume,volInc,volDec,c_volume,userid):
 			for r in result:
 				emails.append(r[0])
 			sendEmail(price,emails)
+
 def checkMarketCapAlert(marketcap,mktInc,mktDec,c_marketcap,userid):
 	emails=[]
 	percentage=(c_marketcap-marketcap)/c_marketcap*100;
